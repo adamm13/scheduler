@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import "components/Application.scss";
 import DayList from "components/DayList";
-import Appointment from "components/Application";
+import Appointment from "components/Appointment";
 
 const appointments = [
   {
@@ -70,15 +70,11 @@ const appointments = [
 export default function Application(props) {
 
   const [dayOfWeek, setDayofWeek] = useState("Monday")
-/*
+
   const parsedAppointments = appointments.map(appointment =>  {
-   return (
-   <Appointment
-    key={appointment.id} {...appointment} 
-    /> 
-    )
+   return (<Appointment key={appointment.id} {...appointment} /> )
   })
-*/
+
    return (
     <main className="layout">
       <section className="sidebar">
@@ -89,9 +85,9 @@ export default function Application(props) {
   <hr className="sidebar__separator sidebar--centered" />
   <nav className="sidebar__menu">
     <DayList
-  days={days}
-  day={dayOfWeek}
-  setDay={setDayofWeek}
+      days={days}
+      day={dayOfWeek}
+      setDay={setDayofWeek}
     />
   </nav>
   <img
@@ -100,6 +96,8 @@ export default function Application(props) {
     alt="Lighthouse Labs"/>
       </section>
       <section className="schedule">
+        {parsedAppointments}
+         <Appointment  key="last" time="5pm" />
       </section>
     </main>
   );
