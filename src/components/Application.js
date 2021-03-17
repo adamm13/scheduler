@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 import "components/Application.scss";
 import DayList from "components/DayList";
@@ -48,32 +48,21 @@ const appointments = [
   }
 ];
 
-  const days = [
-  {
-    id: 1,
-    name: "Monday",
-    spots: 2,
-  },
-  {
-    id: 2,
-    name: "Tuesday",
-    spots: 5,
-  },
-  {
-    id: 3,
-    name: "Wednesday",
-    spots: 0,
-  },
-];
-
 
 export default function Application(props) {
 
-  const [dayOfWeek, setDayofWeek] = useState("Monday")
-
-  const parsedAppointments = appointments.map(appointment =>  {
-   return (<Appointment key={appointment.id} {...appointment} /> )
+  const parsedAppointments = appointments.map(appointment => {
+    return (<Appointment key={appointment.id} {...appointment} />)
   })
+
+  const [dayOfWeek, setDayofWeek] = useState("Monday")
+  const [days, setDays] = useState([]);
+
+  useEffect(() => {
+    const getDays = "/api/days"
+    axios.get(getDays) //axios API request to get days 
+    .then(response => setDays(response.data)) 
+  }, [])
 
    return (
     <main className="layout">
