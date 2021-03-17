@@ -7,13 +7,15 @@ import InterviewerListItem from "components/InterviewerListItem";
 export default function InterviewerList(props) {
 
   let listOfInterviewers = props.interviewers.map((interviewer) => {
-    return <InterviewerListItem
+    return (
+      <InterviewerListItem
           key={interviewer.id} 
           avatar={interviewer.avatar}
           name={interviewer.name}
           selected={props.interviewer === interviewer.id}
-          setInterviewer={props.setInterviewer}
+          setInterviewer={() => props.setInterviewer(interviewer.id)}
           />
+    );
   })
 
   return (<section className="interviewers">
