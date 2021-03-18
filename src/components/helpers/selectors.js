@@ -21,10 +21,10 @@ function getInterview(state, interview) {  //add the information from interviewe
       return null;
 
     } else {
-      const interviewerData = state.interviewers[interview.interviewer];
+      const interviewerData = state.interviewers[interview.interviewer]; // id, name, avatar from interviewer
       return {
         student: interview.student,
-        interviewer: interviewerData
+        interviewer: interviewerData 
       }
     }
   };
