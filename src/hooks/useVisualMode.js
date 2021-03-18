@@ -2,22 +2,27 @@ import { useState } from "react";
 
 
 export default function useVisualMode(initial) {
-  const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial])
+  //taking in a new mode
+  function transition(newMode, replace) { 
 
-  function transition(newMode) { //taking in a new mode
-    setMode(newMode) //updating the mode state with the new value
-    setHistory(history => [newMode,...history]) //set history to the new mode
-   }
+     setHistory(prev => replace 
+      ? [...prev.slice(0, prev.length -1), newMode] 
+      : [...prev, newMode]) //set history to the new mode w/ callback so if used async will always be whats set
 
-   function back() {
-     setMode(history - 1)
-     setHistory(history => history.slice(1)) // new copy of array - everything except first
+  }
 
+  function back() {
+    //if (history.length > 1){ // History array will need to always have a length that is > 1
+      setHistory(prev => history.length > 1 
+        ? prev.slice(0, prev.length - 1)
+        : prev // new copy of array - everything except first
+      )
+  }
 
-   }
-
-  return { mode, transition, back };
+  return { mode: history[history.length -1], transition, back };
 }
-  
+
+
+
 
