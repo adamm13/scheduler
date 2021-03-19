@@ -6,9 +6,9 @@ export default function useVisualMode(initial) {
   //taking in a new mode
   function transition(newMode, replace) { 
 
-     setHistory(prev => replace 
+    setHistory(prev => replace //set history to the new mode 
       ? [...prev.slice(0, prev.length -1), newMode] 
-      : [...prev, newMode]) //set history to the new mode w/ callback so if used async will always be whats set
+      : [...prev, newMode]) 
 
   }
 
@@ -16,7 +16,7 @@ export default function useVisualMode(initial) {
     //if (history.length > 1){ // History array will need to always have a length that is > 1
       setHistory(prev => history.length > 1 
         ? prev.slice(0, prev.length - 1)
-        : prev // new copy of array - everything except first
+        : prev 
       )
   }
 

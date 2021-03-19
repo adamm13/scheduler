@@ -14,6 +14,21 @@ function getAppointmentsForDay(state, day) {
   return result; //return an array of appointments.
 }
 
+function getInterviewersForDay(state, day) {
+
+  const result = [];
+  const daysInfo = state.days.filter(dayOfWeek => dayOfWeek.name === day) // Find the correct day via .filter
+
+  if (daysInfo[0] === undefined) {
+    return result;
+  }
+
+  for (const info of daysInfo[0].interviewers) { // Loop appointment array to find corresponding appointments.
+    result.push(state.interviewers[info])
+  }
+  return result; //return an array of appointments.
+}
+
 
 function getInterview(state, interview) {  //add the information from interviewer if existing interview
 
@@ -31,4 +46,4 @@ function getInterview(state, interview) {  //add the information from interviewe
 
 
 
-export { getAppointmentsForDay, getInterview };
+export { getAppointmentsForDay, getInterview, getInterviewersForDay };
