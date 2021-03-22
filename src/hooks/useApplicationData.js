@@ -15,7 +15,7 @@ export default function useApplicationData() {
     days.forEach(day => {
       if ((!appointments[id].interview && value === -1) || value === 1) {
         if (day.appointments.includes(id)) {
-          day.spots = parseInt(day.spots) + value
+          day.spots += value
         }
       }
     })
