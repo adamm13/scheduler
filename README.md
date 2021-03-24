@@ -5,7 +5,7 @@ This is a single-page app built on React.js that allows users to book, edit or c
 - The client application communicated with an API server over HTTP, using the JSON format.
 - Jest tests are used through the development of the project. 
 
-## Technical Specifcations/ Dependancies 
+## Technical Specifications/ Dependancies 
 
 - React
 - Webpack, Babel
