@@ -60,7 +60,7 @@ storiesOf("DayList", module)
     <DayList days={days} day={"Tuesday"} setDay={action("setDay")} />
   ));
 
-  const interviewer = {
+const interviewer = {
   id: 1,
   name: "Sylvia Palmer",
   avatar: "https://i.imgur.com/LpaY82x.png"
@@ -130,44 +130,44 @@ storiesOf("Appointment", module)
   .add("Empty", () => <Empty onAdd={action("onAdd")} />)
   .add("Show", () => (
     <Show
-    student={"Lydia Miller Jones"}
-    interviewer={interviewer}
-    onEdit={action("onEdit")}
-    onDelete={action("onDelete")}
+      student={"Lydia Miller Jones"}
+      interviewer={interviewer}
+      onEdit={action("onEdit")}
+      onDelete={action("onDelete")}
     />
   ))
   .add("Confirm", () => (
     <Confirm
-    message={"Delete the Appointment?"}
-    onConfirm={action("onConfirm")}
-    onCancel={action("onCancel")}
+      message={"Delete the Appointment?"}
+      onConfirm={action("onConfirm")}
+      onCancel={action("onCancel")}
     />
   ))
   .add("Status", () => (
     <Status
-    message={"Deleting"}
+      message={"Deleting"}
     />
   ))
   .add("Error", () => (
     <Error
-    message={"Could not delete the appointment."}
-    onClose={action("onClose")}
+      message={"Could not delete the appointment."}
+      onClose={action("onClose")}
     />
   ))
   .add("Edit", () => (
     <Form
-    name={"Lydia Miller-Jones"}
-    interviewers={interviewers}
-    interviewer={4}
-    onSave={action("onSave")}
-    onCancel={action("onCancel")}
+      name={"Lydia Miller-Jones"}
+      interviewers={interviewers}
+      interviewer={4}
+      onSave={action("onSave")}
+      onCancel={action("onCancel")}
     />
   ))
   .add("Create", () => (
     <Form
-    interviewers={interviewers}
-    onSave={action("onSave")}
-    onCancel={action("onCancel")}
+      interviewers={interviewers}
+      onSave={action("onSave")}
+      onCancel={action("onCancel")}
     />
   ))
 

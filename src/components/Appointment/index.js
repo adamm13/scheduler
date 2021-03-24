@@ -25,6 +25,7 @@ export default function Appointment(props) {
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
 
+  // Call the book interview function in the app componant and wait for completion before showing new mode
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -32,29 +33,29 @@ export default function Appointment(props) {
     };
     transition(SAVING)
     props
-    .bookInterview(props.id, interview)
-    .then(() => transition(SHOW))
-    .catch(err => {
-      transition(ERROR_SAVE, true)
-      //console.log(err)
-    });
-    
-  }
+      .bookInterview(props.id, interview)
+      .then(() => transition(SHOW))
+      .catch(err => {
+        transition(ERROR_SAVE, true)
+        //console.log(err)
+      });
 
-  function deleteInterview(id){
+  }
+  // call the cancel interview function in the app componant and wait for completion before showing a new mode.
+  function deleteInterview(id) {
     transition(DELETING, true)
     props
-    .cancelInterview(props.id)
-    .then(() => transition(EMPTY))
-    .catch(err => {
-      transition(ERROR_DELETE, true)
-      //console.log(err)
-    });  
+      .cancelInterview(props.id)
+      .then(() => transition(EMPTY))
+      .catch(err => {
+        transition(ERROR_DELETE, true)
+        //console.log(err)
+      });
   }
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
-  
+
   )
 
   return (
@@ -62,7 +63,7 @@ export default function Appointment(props) {
       <Header time={props.time} />
       {mode === EMPTY &&
         <Empty
-        onAdd={() => transition(CREATE)} />}
+          onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
         <Show
           student={props.interview.student}
@@ -77,7 +78,7 @@ export default function Appointment(props) {
           interviewers={props.interviewers}
           onSave={save}
           onCancel={back}
-          //bookInterview={props.bookInterview}
+        //bookInterview={props.bookInterview}
         />
       )}
       {mode === SAVING && (

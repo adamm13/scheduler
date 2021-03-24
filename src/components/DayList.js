@@ -5,7 +5,7 @@ import DayListItem from "components/DayListItem";
 
 export default function DayList(props) {
 
-  return props.days.map(day => 
+  return props.days.map(day =>
 
     <DayListItem
       key={day.id} // in React we need to uniquely identify each component
