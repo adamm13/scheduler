@@ -6,13 +6,13 @@ Users can interact with this app as the updates are dynamic and happen on the cl
 
 ## Screenshots
 Regular View and Adding an Appointment with and without a Name.
-!["Regular appointments"](scheduler/docs/AddInterviewFinal.gif)
+!["Regular appointments"](https://github.com/adamm13/scheduler/blob/master/docs/AddInterviewFinal.gif)
 
 Edit and Deleting existing Interviews with Confirmation
-!["Edit/ Delete form"](scheduler/docs/editDelete.gif)
+!["Edit/ Delete form"](https://github.com/adamm13/scheduler/blob/master/docs/editDelete.gif)
 
 If Disconnected from API DB, Throws Errors when trying to Modify. 
-!["Disconnect Errors"](scheduler/docs/ScheduleErrors.gif)
+!["Disconnect Errors"](https://github.com/adamm13/scheduler/blob/master/docs/ScheduleErrors.gif)
 
 ## Technical Specifcations/ Dependancies 
 
