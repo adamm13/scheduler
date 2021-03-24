@@ -128,7 +128,7 @@ describe("Application", () => {
     // 2. Wait for container to show archie cohen
     await waitForElement(() => getByText(container, "Archie Cohen"));
     const appointment = getAllByTestId(container, "appointment")[2];
-    // 3. Render the Application.
+    // 3. Click the add button
     fireEvent.click(getByAltText(appointment, "Add"))
     // 4. App changes to show the student name populated with the target lydia 
     fireEvent.change(getByPlaceholderText(appointment, "Enter Student Name"), {
@@ -147,17 +147,22 @@ describe("Application", () => {
 
   it("shows the delete error when failing to delete an existing appointment", async () => {
     axios.delete.mockRejectedValueOnce();
-
+  // 1. Render the Application.
     const { container } = render(<Application />);
+       // 2. Wait for container to show archie cohen
     await waitForElement(() => getByText(container, "Archie Cohen"));
     const appointment = getAllByTestId(container, "appointment").find(appointment => queryByText(appointment, "Archie Cohen"));
-
+  // 3. Click the Delete button
     fireEvent.click(getByAltText(appointment, "Delete"));
+    // 4. expect to see the delete confirm message
     expect(getByText(appointment, "Are you sure you want to delete?")).toBeInTheDocument();
+    //5 . click confirm to update message
     fireEvent.click(queryByText(appointment, "Confirm"));
-
+    // 6. expect tot see the deleting spin wheel 
     expect(getByText(appointment, "Deleting...")).toBeInTheDocument();
+    //7 . wait for the spin element to be removed 
     await waitForElementToBeRemoved(() => getByText(appointment, "Deleting..."));
+    //8. show the text unable to delete
     expect(getByText(appointment, "Unable to delete")).toBeInTheDocument();
   });
 });
