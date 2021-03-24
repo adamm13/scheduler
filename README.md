@@ -22,8 +22,8 @@ If Disconnected from API DB, Throws Errors when trying to Modify.
 !["Disconnect Errors"](https://github.com/adamm13/scheduler/blob/master/docs/ScheduleErrors.gif)
 
 Optimized for Both Desktop and Mobile.
-!["Mobile Views"](https://github.com/adamm13/scheduler/blob/master/docs/Screen%20Shot%202021-03-24%20at%204.00.52%20PM%20(2).png)
-(https://github.com/adamm13/scheduler/blob/master/docs/Screen%20Shot%202021-03-24%20at%204.01.03%20PM%20(2).png)
+!["Mobile Views"](https://github.com/adamm13/scheduler/blob/master/docs/Screen%20Shot%202021-03-24%20at%204.00.52%20PM%20(2).png, https://github.com/adamm13/scheduler/blob/master/docs/Screen%20Shot%202021-03-24%20at%204.01.03%20PM%20(2).png)
+
 
 ## If you want to run the app locally
 1. Fork this repository, then clone your fork of this repository.
