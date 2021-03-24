@@ -4,6 +4,13 @@
 This is a single-page app built on React.js that allows users to book, edit or cancel interviews for each day of the week (Monday to Friday).
 Users can interact with this app as the updates are dynamic and happen on the client-side. 
 
+## Technical Specifcations/ Dependancies 
+
+- React
+- Webpack, Babel
+- Axios
+- Storybook, Webpack Dev Server, JEST, Testing Library
+
 ## Screenshots
 Regular View and Adding an Appointment with and without a Name.
 !["Regular appointments"](https://github.com/adamm13/scheduler/blob/master/docs/AddInterviewFinal.gif)
@@ -14,12 +21,8 @@ Edit and Deleting existing Interviews with Confirmation
 If Disconnected from API DB, Throws Errors when trying to Modify. 
 !["Disconnect Errors"](https://github.com/adamm13/scheduler/blob/master/docs/ScheduleErrors.gif)
 
-## Technical Specifcations/ Dependancies 
-
-- React
-- Webpack, Babel
-- Axios
-- Storybook, Webpack Dev Server, JEST, Testing Library
+Optimized for Both Desktop and Mobile.
+!["Mobile Views"]()
 
 ## If you want to run the app locally
 1. Fork this repository, then clone your fork of this repository.
