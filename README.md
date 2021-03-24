@@ -2,7 +2,7 @@
 
 This is a single-page app built on React.js that allows users to book, edit or cancel interviews for each day of the week (Monday to Friday).
 - Data is persisted by the API server using a PostgreSQL database.
-- The client applicaiton communicated with an API server over HTTP, using the JSON format.
+- The client application communicated with an API server over HTTP, using the JSON format.
 - Jest tests are used through the development of the project. 
 
 ## Technical Specifcations/ Dependancies 
